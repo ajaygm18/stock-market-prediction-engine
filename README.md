@@ -162,22 +162,56 @@ A comprehensive, production-ready machine learning system designed to predict st
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### Option 1: Run Without Docker (Native Python)
+
+#### Prerequisites
+- **Python 3.11+** installed on your system
+- **4GB+ RAM** for ML model loading
+- **Ports 8000 & 8501** available
+
+#### Setup & Installation
+```bash
+git clone https://github.com/LeoRigasaki/Stock-Engine.git
+cd Stock-Engine
+
+# Run the automated setup script
+./setup.sh
+
+# Initialize demonstration models (first time only)
+python init_models.py
+```
+
+#### Running the Application
+```bash
+# Option 1: Run everything (API + Dashboard)
+./run_all.sh
+
+# Option 2: Run individual components
+./run_api.sh         # FastAPI server only (http://localhost:8000/docs)
+./run_dashboard.sh   # Streamlit dashboard only (http://localhost:8501)
+./run_main.sh        # Main prediction engine
+
+# Option 3: Development mode with hot reload
+./run_dev.sh
+
+# Option 4: Jupyter notebook for development
+./run_jupyter.sh
+```
+
+### Option 2: Docker Deployment
+
+#### Prerequisites
 - **Docker** installed on your system
 - **4GB+ RAM** for ML model loading
 - **Ports 8000 & 8501** available
 
-### Development Setup (Optional)
+#### Docker Setup
 ```bash
+# Clone the repository
 git clone https://github.com/LeoRigasaki/Stock-Engine.git
 cd Stock-Engine
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
 
-### Local Development
-```bash
+# Run with Docker Compose
 docker-compose up
 ```
 
